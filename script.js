@@ -65,7 +65,7 @@ var ScoreFunction = setInterval(function(){
         if (score >= highscore) {
             highscore = score
         }
-        highscoretext.textContent = "HighScore: " + score
+        highscoretext.textContent = "HighScore: " + highscore
     }
 },1000)
 
