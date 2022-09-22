@@ -8,11 +8,11 @@ var running = false
 var highscore = 0
 var score = 0
 
-if (localStorage.getItem('HighScore') == null) {
+/*if (localStorage.getItem('HighScore') == null) {
     
 } else {
     var score = localStorage.getItem('HighScore')
-}
+}/*
 
 /* Storing user's device details in a variable*/
        let details = navigator.userAgent;
@@ -91,7 +91,7 @@ var ScoreFunction = setInterval(function(){
             highscore = score
         }
         highscoretext.textContent = "HighScore: " + highscore
-        localStorage.setItem('HighScore', highscore);
+        //localStorage.setItem('HighScore', highscore);
     }
 },1000)
 
