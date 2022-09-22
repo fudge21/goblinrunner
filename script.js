@@ -7,6 +7,31 @@ var highscoretext = document.getElementById("highscore")
 var running = false
 var highscore = 0
 var score = 0
+
+if (localStorage.getItem('HighScore') == null) {
+    
+} else {
+    var score = localStorage.getItem('HighScore')
+}
+
+/* Storing user's device details in a variable*/
+       let details = navigator.userAgent;
+  
+        /* Creating a regular expression 
+        containing some mobile devices keywords 
+        to search it in details string*/
+        let regexp = /android|iphone|kindle|ipad/i;
+  
+        /* Using test() method to search regexp in details
+        it returns boolean value*/
+        let isMobileDevice = regexp.test(details);
+  
+        if (isMobileDevice) {
+            var device = "Mobile";
+        } else {
+            var device = "Computer";
+        }
+
 function jump() {
     if (character.classList !="animate") {
         character.classList.add("animate")
@@ -66,6 +91,7 @@ var ScoreFunction = setInterval(function(){
             highscore = score
         }
         highscoretext.textContent = "HighScore: " + highscore
+        localStorage.setItem('HighScore', highscore);
     }
 },1000)
 
